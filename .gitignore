@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.log
+pytest_cache/
+.vscode/
+.idea/
+
+qa_python/
+qa_python_tasks-main/
+sprint5.py/
+test_s.py
