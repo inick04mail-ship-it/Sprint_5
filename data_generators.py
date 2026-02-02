@@ -24,7 +24,6 @@ def generate_password(min_length: int = 6) -> str:
     uppercase = string.ascii_uppercase
     digits = string.digits
 
-    # Гарантируем наличие трёх типов символов
     password_chars = [
         random.choice(lowercase),
         random.choice(uppercase),

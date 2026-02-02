@@ -4,31 +4,26 @@ from selenium.webdriver.common.by import By
 class MainPage:
     """Локаторы главной страницы"""
 
-    # кнопка "Войти в аккаунт" на главной
     LOGIN_BUTTON = (
         By.XPATH,
         "//button[contains(text(), 'Войти в аккаунт')]",
     )
 
-    # кнопка "Личный кабинет" в шапке
     PERSONAL_ACCOUNT_BUTTON = (
         By.XPATH,
         "//p[contains(text(), 'Личный Кабинет')]",
     )
 
-    # логотип в шапке
     LOGO = (
         By.XPATH,
         "//div[contains(@class, 'AppHeader_header__logo')]",
     )
 
-    # кнопка "Конструктор" в шапке
     CONSTRUCTOR_BUTTON = (
         By.XPATH,
         "//p[contains(text(), 'Конструктор')]",
     )
 
-    # заголовок "Соберите бургер" на главной
     CONSTRUCTOR_TITLE = (
         By.XPATH,
         "//h1[contains(text(), 'Соберите бургер')]",
@@ -97,7 +92,6 @@ class RegistrationPage:
         "a.Auth_link__1fOlj[href='/login']",
     )
 
-    # сообщение об ошибке для пароля — по классу ошибки, без индексов fieldset
     ERROR_MESSAGE = (
         By.CSS_SELECTOR,
         "p.input__error",
@@ -130,26 +124,24 @@ class PersonalAccountPage:
 class ConstructorPage:
     """Локаторы разделов конструктора"""
 
-    # вкладка "Булки"
     BUNS_TAB = (
         By.XPATH,
         "//span[contains(text(), 'Булки')]/parent::div",
     )
 
-    # вкладка "Соусы"
     SAUCES_TAB = (
         By.XPATH,
         "//span[contains(text(), 'Соусы')]/parent::div",
     )
 
-    # вкладка "Начинки"
     FILLINGS_TAB = (
         By.XPATH,
         "//span[contains(text(), 'Начинки')]/parent::div",
     )
 
-    # активная вкладка конструктора — span с текстом внутри активного tab
     ACTIVE_TAB = (
         By.CSS_SELECTOR,
         "div.tab_tab_type_current__2BEPc",
     )
+
+    TAB_SPAN = (By.TAG_NAME, "span")
