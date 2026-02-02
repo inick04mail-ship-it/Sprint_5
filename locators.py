@@ -97,9 +97,10 @@ class RegistrationPage:
         "a.Auth_link__1fOlj[href='/login']",
     )
 
+    # сообщение об ошибке для пароля — по классу ошибки, без индексов fieldset
     ERROR_MESSAGE = (
-        By.XPATH,
-        "//fieldset[3]//p[contains(@class, 'input__error')]",
+        By.CSS_SELECTOR,
+        "p.input__error",
     )
 
 
@@ -147,8 +148,8 @@ class ConstructorPage:
         "//span[contains(text(), 'Начинки')]/parent::div",
     )
 
-    # активная вкладка конструктора — сразу span с текстом
+    # активная вкладка конструктора — span с текстом внутри активного tab
     ACTIVE_TAB = (
         By.CSS_SELECTOR,
-        "div.tab_tab_type_current__2BEPc span",
+        "div.tab_tab_type_current__2BEPc",
     )

@@ -8,6 +8,7 @@ def generate_random_string(length: int) -> str:
 
 
 def generate_unique_email(cohort_number: int = 1999) -> str:
+    """Генерация уникального email с использованием случайных букв и цифр."""
     name = generate_random_string(5)
     surname = generate_random_string(6)
     random_digits = "".join(random.choice(string.digits) for _ in range(3))
@@ -15,6 +16,7 @@ def generate_unique_email(cohort_number: int = 1999) -> str:
 
 
 def generate_password(min_length: int = 6) -> str:
+    """Генерация валидного пароля: минимум одна строчная, прописная буква и цифра."""
     if min_length < 6:
         min_length = 6
 
@@ -22,6 +24,7 @@ def generate_password(min_length: int = 6) -> str:
     uppercase = string.ascii_uppercase
     digits = string.digits
 
+    # Гарантируем наличие трёх типов символов
     password_chars = [
         random.choice(lowercase),
         random.choice(uppercase),
@@ -36,5 +39,6 @@ def generate_password(min_length: int = 6) -> str:
 
 
 def generate_incorrect_password() -> str:
+    """Генерация некорректного (слишком короткого) пароля."""
     length = random.randint(1, 5)
     return generate_random_string(length)

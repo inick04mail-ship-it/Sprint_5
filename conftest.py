@@ -11,10 +11,7 @@ from urls import BASE_URL
 
 @pytest.fixture(scope="function")
 def driver():
-    """
-    Фикстура WebDriver.
-    Открывает Chrome перед тестом и закрывает после.
-    """
+    """Фикстура WebDriver: открывает Chrome перед тестом и закрывает после."""
     options = Options()
     # options.add_argument("--headless")
     options.add_argument("--window-size=1920,1080")
@@ -29,9 +26,7 @@ def driver():
 
 @pytest.fixture(scope="function")
 def login_existing_user(driver):
-    """
-    Логинится под существующим пользователем.
-    """
+    """Логинится под существующим пользователем через UI."""
     driver.get(BASE_URL)
 
     login_button_main = WebDriverWait(driver, 10).until(

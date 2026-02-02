@@ -63,7 +63,7 @@ def go_to_forgot_password_from_main(driver):
     forgot_password_link.click()
 
 
-def fill_registration_form(driver, user_data):
+def fill_registration_form(driver, user_data: dict):
     """Заполняет форму регистрации и жмёт 'Зарегистрироваться'."""
     name_input = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located(RegistrationPage.NAME_INPUT)
@@ -88,7 +88,7 @@ def wait_for_login_form(driver):
     return login_title
 
 
-def fill_login_form_and_submit(driver, email, password):
+def fill_login_form_and_submit(driver, email: str, password: str):
     """Заполняет форму логина и жмёт 'Войти'."""
     email_input = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located(LoginPage.EMAIL_INPUT)

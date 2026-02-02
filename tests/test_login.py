@@ -13,11 +13,11 @@ from helpers import (
     fill_login_form_and_submit,
     wait_for_authorized_main_page,
 )
-from locators import MainPage, LoginPage, RegistrationPage, ForgotPasswordPage
+from locators import MainPage, RegistrationPage, ForgotPasswordPage
 
 
 class TestLogin:
-    """Тесты входа в систему разными способами"""
+    """Тесты входа в систему разными способами."""
 
     def register_new_user(self, driver):
         """Регистрирует нового пользователя через UI и возвращает user_data."""
@@ -42,9 +42,9 @@ class TestLogin:
         fill_login_form_and_submit(driver, user_data["email"], user_data["password"])
 
         personal_account_button = wait_for_authorized_main_page(driver)
-        assert (
-            personal_account_button.is_displayed()
-        ), "Кнопка 'Личный кабинет' должна быть видна после входа"
+        assert personal_account_button.is_displayed(), (
+            "Кнопка 'Личный кабинет' должна быть видна после входа"
+        )
 
     # 2) Вход через кнопку «Личный кабинет»
     def test_login_from_personal_account_button(self, driver):
@@ -63,16 +63,15 @@ class TestLogin:
         fill_login_form_and_submit(driver, user_data["email"], user_data["password"])
 
         personal_account_button_after = wait_for_authorized_main_page(driver)
-        assert (
-            personal_account_button_after.is_displayed()
-        ), "Кнопка 'Личный кабинет' должна быть видна после входа"
+        assert personal_account_button_after.is_displayed(), (
+            "Кнопка 'Личный кабинет' должна быть видна после входа"
+        )
 
     # 3) Вход через ссылку в форме регистрации
     def test_login_from_registration_form(self, driver):
         """Вход через ссылку 'Войти' в форме регистрации."""
         user_data = self.register_new_user(driver)
 
-        # Снова переходим на форму регистрации
         from urls import BASE_URL
 
         driver.get(BASE_URL)
@@ -86,9 +85,9 @@ class TestLogin:
         fill_login_form_and_submit(driver, user_data["email"], user_data["password"])
 
         personal_account_button = wait_for_authorized_main_page(driver)
-        assert (
-            personal_account_button.is_displayed()
-        ), "Кнопка 'Личный кабинет' должна быть видна после входа"
+        assert personal_account_button.is_displayed(), (
+            "Кнопка 'Личный кабинет' должна быть видна после входа"
+        )
 
     # 4) Вход через ссылку в форме восстановления пароля
     def test_login_from_forgot_password_form(self, driver):
@@ -106,6 +105,6 @@ class TestLogin:
         fill_login_form_and_submit(driver, user_data["email"], user_data["password"])
 
         personal_account_button = wait_for_authorized_main_page(driver)
-        assert (
-            personal_account_button.is_displayed()
-        ), "Кнопка 'Личный кабинет' должна быть видна после входа"
+        assert personal_account_button.is_displayed(), (
+            "Кнопка 'Личный кабинет' должна быть видна после входа"
+        )
